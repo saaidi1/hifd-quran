@@ -1,0 +1,282 @@
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   Ù…Ø¯Ø±Ø³Ø© ØªØ­ÙÙŠØ¸ Ø§Ù„Ù‚Ø±Ø¢Ù† Ø§Ù„ÙƒØ±ÙŠÙ… â€” Interface Bootstrap (RTL)
+   Police Noto Kufi Arabic
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+
+:root {
+    --bs-body-font-family: 'Noto Kufi Arabic', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --madrasa-primary: #0d6efd;
+    --madrasa-bg: #f8f9fa;
+    --madrasa-sidebar-bg: #ffffff;
+    --madrasa-sidebar-width: 260px;
+}
+
+* {
+    font-family: 'Noto Kufi Arabic', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: var(--madrasa-bg);
+    color: #212529;
+}
+
+::selection {
+    background-color: rgb(13 110 253 / 0.2);
+}
+
+/* â”€â”€â”€ Barre latÃ©rale â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Barre latérale, fixée à DROITE de l'écran */
+.app-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: var(--madrasa-sidebar-width);
+    height: 100vh;
+    background: var(--madrasa-sidebar-bg);
+    border-left: 1px solid #dee2e6;
+    overflow-y: auto;
+    z-index: 1040;
+    transition: transform 0.2s ease-in-out;
+}
+
+.app-content {
+    margin-right: var(--madrasa-sidebar-width);
+    min-height: 100vh;
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 1.25rem;
+    color: var(--madrasa-primary);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.sidebar-brand:hover {
+    color: var(--madrasa-primary);
+}
+
+.sidebar-brand i {
+    font-size: 1.6rem;
+}
+
+.sidebar-nav {
+    padding: 0.75rem 0;
+}
+
+.sidebar-group-label {
+    padding: 0.75rem 1.25rem 0.35rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #6c757d;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.sidebar-nav .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.55rem 1.25rem;
+    color: #495057;
+    font-size: 0.9rem;
+    border-radius: 0;
+    border-right: 3px solid transparent;
+}
+
+.sidebar-nav .nav-link i {
+    font-size: 1.05rem;
+    width: 1.25rem;
+    text-align: center;
+}
+
+.sidebar-nav .nav-link:hover {
+    background-color: #f8f9fa;
+    color: var(--madrasa-primary);
+}
+
+.sidebar-nav .nav-link.active {
+    background-color: rgb(13 110 253 / 0.1);
+    color: var(--madrasa-primary);
+    font-weight: 500;
+    border-right-color: var(--madrasa-primary);
+}
+
+.sidebar-badge {
+    margin-right: auto;
+}
+
+/* â”€â”€â”€ Barre supÃ©rieure â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.app-topbar {
+    background: #fff;
+    border-bottom: 1px solid #dee2e6;
+    padding: 0.6rem 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+}
+
+.app-topbar .navbar-toggler {
+    border: 0;
+    padding: 0.25rem 0.5rem;
+}
+
+/* â”€â”€â”€ Cartes statistiques â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.stat-card {
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    background: #fff;
+    box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 0.075);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    height: 100%;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 0.12);
+}
+
+.stat-card .stat-icon {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.75rem;
+    font-size: 1.4rem;
+}
+
+.stat-card .stat-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.stat-card .stat-label {
+    color: #6c757d;
+    font-size: 0.85rem;
+}
+
+.stat-card .stat-description {
+    color: #6c757d;
+    font-size: 0.8rem;
+}
+
+/* â”€â”€â”€ Cartes / panneaux gÃ©nÃ©riques â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.app-card {
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 0.075);
+}
+
+.app-card .card-header {
+    background: #fff;
+    border-bottom: 1px solid #dee2e6;
+    font-weight: 600;
+}
+
+/* â”€â”€â”€ Tableaux â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.table thead th {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+}
+
+.table-hover tbody tr {
+    transition: background-color 0.15s ease;
+}
+
+/* â”€â”€â”€ Badges statuts â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.status-badge {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* â”€â”€â”€ Page de connexion â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cg fill='none' stroke='%230d6efd' stroke-width='1.1' stroke-opacity='0.12'%3E%3Cpath d='M36 3l8.4 24.6L69 36l-24.6 8.4L36 69l-8.4-24.6L3 36l24.6-8.4z'/%3E%3Ccircle cx='36' cy='36' r='4.5'/%3E%3C/g%3E%3C/svg%3E"),
+        linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 1rem;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 420px;
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    box-shadow: 0 1rem 3rem rgb(0 0 0 / 0.12);
+}
+
+.auth-brand {
+    color: var(--madrasa-primary);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* â”€â”€â”€ Menu dÃ©roulant utilisateur â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.user-menu-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    padding: 0.375rem 0.75rem;
+}
+
+/* â”€â”€â”€ Divers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.avatar-circle {
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(13 110 253 / 0.12);
+    color: var(--madrasa-primary);
+    font-weight: 700;
+}
+
+.avatar-sm {
+    width: 1.9rem;
+    height: 1.9rem;
+    font-size: 0.8rem;
+}
+
+.coranic-range {
+    font-family: inherit;
+    line-height: 1.7;
+}
+
+.list-group-item-action {
+    cursor: pointer;
+}
+
+@media (max-width: 991.98px) {
+    /* La barre est à droite → elle se cache vers la droite */
+    .app-sidebar {
+        transform: translateX(100%);
+    }
+
+    .app-sidebar.show {
+        transform: translateX(0);
+    }
+
+    /* Sur mobile la barre se superpose : aucun décalage du contenu */
+    .app-content {
+        margin-right: 0;
+    }
+}
